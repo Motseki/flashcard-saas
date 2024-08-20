@@ -8,7 +8,7 @@ import Link from 'next/link';
 export default function SignUpPage() {
   return (
     <Container maxWidth="sm">
-      <AppBar position="static" sx={{ backgroundColor: '#6A0DAD' }}>
+      <AppBar position="static" sx={{ backgroundColor: '#189ab4' }}>
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             Flashcard SaaS
