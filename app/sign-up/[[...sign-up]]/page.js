@@ -15,7 +15,7 @@ export default function SignUpPage() {
           </Typography>
           <Button
             sx={{
-              background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+              background: 'linear-gradient(45deg, #a3ebb1 30%, #a3ebb1 90%)',
               borderRadius: '30px',
               color: 'white',
               px: 3,
@@ -34,7 +34,7 @@ export default function SignUpPage() {
           </Button>
           <Button
             sx={{
-              background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+              background: 'linear-gradient(45deg, #a3ebb1 30%, #a3ebb1 90%)',
               borderRadius: '30px',
               color: 'white',
               px: 3,
