@@ -51,12 +51,14 @@
 
 
 import { NextResponse } from 'next/server'
-import OpenAI from 'openai'
+// import OpenAI from 'openai'
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // You need to ensure that the API key is available via environment variables
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY, // Make sure you have this in your environment variables
-})
+const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GENERATIVE_AI_API_KEY);
+// const openai = new OpenAI({
+//   apiKey: process.env.OPENAI_API_KEY, // Make sure you have this in your environment variables
+// })
 
 const systemPrompt = `
 You are a flashcard creator. You take in text and create 10 flashcards from it. Each flashcard should have exactly one sentence on the front and one sentence on the back, formatted as JSON.
@@ -71,10 +73,12 @@ Return the response in the following format:
 `
 
 export async function POST(req) {
-    const openai = new OpenAI()
+    // const openai = new OpenAI()
+    const genai = genAI.getGenerativeModel({ model: "gemini-pro" });
     const data = await req.text()
   
-    const completion = await openai.chat.completions.create({
+    // const completion = await openai.chat.completions.create({
+      const completion = await genai.chat.completions.create({
       messages: [
         { role: 'system', content: systemPrompt },
         { role: 'user', content: data },
